@@ -13,6 +13,8 @@ public class MainMenuUI extends UAIJFrame {
     private JButton mostrarDatosButton;
     private JButton buscarButton;
     private JButton eliminarButton;
+    private JButton agregarButtom;
+    private JButton editarButton;
 
 
     public MainMenuUI(String title) {
@@ -26,5 +28,15 @@ public class MainMenuUI extends UAIJFrame {
                 UIBuilder.buildUI(MostrarDatosUI.class);
             }
         });
+        agregarButtom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(AgregarLibroUI.class);
+
+            }
+        });
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

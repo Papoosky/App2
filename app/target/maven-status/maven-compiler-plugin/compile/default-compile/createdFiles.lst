@@ -1,5 +1,6 @@
 com\uai\app\files\FileManager.class
 com\uai\app\ui\utils\UAIJFrame.class
+com\uai\app\ui\MainMenuUI$2.class
 com\uai\app\ui\MainMenuUI.class
 com\uai\app\ui\utils\UIBuilder$1.class
 com\uai\app\ui\utils\UIBuilder.class
@@ -16,3 +17,5 @@ com\uai\app\logic\builders\LibroBuilder.class
 com\uai\app\dominio\Libro.class
 com\uai\app\exceptions\NotMainPanelLoadedException.class
 com\uai\app\exceptions\CSVNotFoundException.class
+com\uai\app\ui\AgregarLibroUI.class
+com\uai\app\ui\AgregarLibroUI$1.class

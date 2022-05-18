@@ -23,7 +23,7 @@ public class UAIJFrame extends JFrame {
         }
         this.setSize(800,800);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        this.pack();
+        //this.pack();
         this.setVisible(true);
     }
 }

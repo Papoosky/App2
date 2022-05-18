@@ -46,15 +46,15 @@ public class LibroBuilder {
         return this;
     }
     //Return the finally consrcuted User object
-    public Libro build() {
+    public Libro build(String au,int num,String sec,String tit,int p,String ed, String se) {
         Libro book =  new Libro();
-        book.setAutor(this.autor);
-        book.setEstante_numero(this.estante_numero);
-        book.setEstante_seccion(this.estante_seccion);
-        book.setTitulo(this.titulo);
-        book.setPiso(this.piso);
-        book.setEdificio(this.edificio);
-        book.setSede(this.sede);
+        book.setAutor(this.autor=au);
+        book.setEstante_numero(this.estante_numero=num);
+        book.setEstante_seccion(this.estante_seccion=sec);
+        book.setTitulo(this.titulo=tit);
+        book.setPiso(this.piso=p);
+        book.setEdificio(this.edificio=ed);
+        book.setSede(this.sede=se);
         validateBookObject(book);
         return book;
     }
