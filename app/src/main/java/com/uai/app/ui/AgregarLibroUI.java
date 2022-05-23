@@ -1,6 +1,7 @@
 package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
+import com.uai.app.files.FileManager;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -36,11 +37,12 @@ public class AgregarLibroUI extends UAIJFrame {
                 String sed=sede.getText();
                 int enu=Integer.parseInt(num.getText());
                 int pis=Integer.parseInt(piso.getText());
+
                 HashSet<Libro> data = DataManager.getInstance().getData();
                 LibroBuilder bo = new LibroBuilder();
-                data.add(bo.build(aut,enu,est,tit,pis,edi,sed));
+                Libro book = (bo.build(aut,enu,est,tit,pis,edi,sed));
                 dispose();
-
+                DataManager.getInstance().agregarLibro(book);
             }
         });
     }

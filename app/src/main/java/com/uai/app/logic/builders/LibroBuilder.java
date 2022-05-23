@@ -15,6 +15,7 @@ public class LibroBuilder {
     public LibroBuilder() {
     }
 
+
     public LibroBuilder withTitulo(String titulo) {
         this.titulo = titulo;
         return this;
@@ -48,13 +49,13 @@ public class LibroBuilder {
     //Return the finally consrcuted User object
     public Libro build(String au,int num,String sec,String tit,int p,String ed, String se) {
         Libro book =  new Libro();
-        book.setAutor(this.autor=au);
-        book.setEstante_numero(this.estante_numero=num);
-        book.setEstante_seccion(this.estante_seccion=sec);
-        book.setTitulo(this.titulo=tit);
-        book.setPiso(this.piso=p);
-        book.setEdificio(this.edificio=ed);
-        book.setSede(this.sede=se);
+        book.setAutor(au);
+        book.setEstante_numero(num);
+        book.setEstante_seccion(sec);
+        book.setTitulo(tit);
+        book.setPiso(p);
+        book.setEdificio(ed);
+        book.setSede(se);
         validateBookObject(book);
         return book;
     }
