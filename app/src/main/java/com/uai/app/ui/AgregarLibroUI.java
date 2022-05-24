@@ -44,6 +44,7 @@ public class AgregarLibroUI extends UAIJFrame {
                 dispose();
                 DataManager.getInstance().agregarLibro(book);
             }
+
         });
     }
 }

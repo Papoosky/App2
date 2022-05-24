@@ -16,24 +16,21 @@ import java.util.Map;
  *
  */
 public class App {
-
+    private static FileManager fileManager;
     public static void main( String[] args ) throws IOException {
         System.out.println("COMENZANDO");
         String fileName = args[0];
 
         try {
             //instancio el file manager
-            FileManager f = new FileManager(fileName);
+            fileManager = new FileManager(fileName);
             //instancio y seteo la data
-            DataManager.getInstance().setData(f.getData());
+            DataManager.getInstance().setData(fileManager.getData());
 
             //aca ya puedo llamar al menu
             UIBuilder.buildMainUI(MainMenuUI.class);
 
-            Map a = DataManager.getInstance().getPeopleByColum(Tittles.EDIFICIO);
 
-            //finalizo guardando la data
-            f.saveData();
         } catch (CSVNotFoundException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -42,4 +39,8 @@ public class App {
         System.out.println("Terminado");
 
     }
+    public static void saveData(){
+        fileManager.saveData();
+    }
+
 }
