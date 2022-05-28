@@ -56,7 +56,8 @@ public class SearchManager {
                     }
                 } else {
                     //Con una distancia de 3 estamos bien cubiertos
-                    if (lv.apply(theSearch, filterName) < 10){
+                    if (lv.apply(theSearch, filterName) < 4
+                    ){
                         libros.add(p);
                     }
                 }
@@ -72,6 +73,7 @@ public class SearchManager {
 
         }
         return libros;
+
 
     }
 
