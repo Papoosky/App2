@@ -43,6 +43,12 @@ public class MainMenuUI extends UAIJFrame {
 
             }
         });
+        buscarButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(BuscarLibroUI.class);
+                //agrego el boton de buscar libro
+            }
+        });
 
         this.addWindowListener(new WindowAdapter() {
             @Override

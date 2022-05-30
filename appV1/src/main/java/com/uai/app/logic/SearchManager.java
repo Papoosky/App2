@@ -32,7 +32,7 @@ public class SearchManager {
     /*
     * Esto usa la distancia de leven*
      */
-    public HashSet<Libro> findPersonByAttribute(Tittles title, String theSearch){
+    public HashSet<Libro> buscarlibroportitulo(Tittles title, String theSearch){
         //ahora instancio un mapa con esas claves
         HashSet<Libro> data = DataManager.getInstance().getData();;
         HashSet<Libro> ciudadanos = new HashSet<Libro>();
