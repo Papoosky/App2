@@ -1,0 +1,16 @@
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/App.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/dominio/enums/Tittles.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/files/FileManager.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/utils/UIBuilder.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/exceptions/NotMainPanelLoadedException.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/logic/builders/LibroBuilder.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/exceptions/CSVNotFoundException.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/utils/AppUtils.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/exceptions/DataNotLoadedException.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/AgregarLibroUI.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/logic/DataManager.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/dominio/Libro.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/logic/SearchManager.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/MostrarDatosUI.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/utils/UAIJFrame.java
+/Users/itallo/IdeaProjects/App2-main/app/src/main/java/com/uai/app/ui/MainMenuUI.java
