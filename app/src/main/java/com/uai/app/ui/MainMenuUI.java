@@ -37,12 +37,6 @@ public class MainMenuUI extends UAIJFrame {
 
             }
         });
-        eliminarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(EliminarLibroUI.class);
-
-            }
-        });
 
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -51,7 +45,6 @@ public class MainMenuUI extends UAIJFrame {
                 App.saveData();
             }
         });
-
     }
 
     private void createUIComponents() {
