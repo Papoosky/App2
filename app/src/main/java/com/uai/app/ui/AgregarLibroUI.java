@@ -43,6 +43,7 @@ public class AgregarLibroUI extends UAIJFrame {
                 Libro book = (bo.build(aut,enu,est,tit,pis,edi,sed));
                 dispose();
                 DataManager.getInstance().agregarLibro(book);
+
             }
 
         });
