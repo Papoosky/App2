@@ -104,4 +104,7 @@ public class DataManager {
     public void removerLibro(Collection<Libro> libros){
         this.data.removeAll(libros);
     }
+
+    public void EditarLibro(Libro book) {
+    }
 }

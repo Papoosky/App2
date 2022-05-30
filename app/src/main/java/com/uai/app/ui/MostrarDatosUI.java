@@ -10,6 +10,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.HashSet;
 
+
 public class MostrarDatosUI extends UAIJFrame  {
 
     private JPanel mainPanel;
