@@ -41,7 +41,6 @@ public class AgregarLibroUI extends UAIJFrame {
                 HashSet<Libro> data = DataManager.getInstance().getData();
                 LibroBuilder bo = new LibroBuilder();
                 Libro book = (bo.build(aut,enu,est,tit,pis,edi,sed));
-                dispose();
                 DataManager.getInstance().agregarLibro(book);
             }
 

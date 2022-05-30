@@ -23,7 +23,7 @@ public class BuscarLibroUI extends UAIJFrame {
     private JPanel mainPanel;
     private JPanel mainTableConatiner;
     private JTextArea textArea1;
-    
+
     public BuscarLibroUI(String title) {
         super(title);
         this.setMainPanel(BuscarLibro);
