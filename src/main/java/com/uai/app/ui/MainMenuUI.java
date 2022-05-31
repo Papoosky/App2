@@ -49,18 +49,18 @@ public class MainMenuUI extends UAIJFrame {
                 //agrego el boton de buscar libro
             }
         });
-        editarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UIBuilder.buildUI(EditarLibroUI.class);
-            }
-        });
 
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
                 App.saveData();
+            }
+        });
+        editarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UIBuilder.buildUI(EditarLibroVentana.class);
             }
         });
 
