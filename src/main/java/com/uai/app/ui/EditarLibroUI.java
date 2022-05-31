@@ -1,8 +1,6 @@
 package com.uai.app.ui;
 
 
-import com.uai.app.dominio.enums.Tittles;
-import com.uai.app.logic.SearchManager;
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.builders.LibroBuilder;
@@ -42,19 +40,29 @@ public class EditarLibroUI extends UAIJFrame {
                 int enu = Integer.parseInt(textField6.getText());
                 int pis = Integer.parseInt(textField4.getText());
 
-
                 HashSet<Libro> data = DataManager.getInstance().getData();
 
-                SearchManager.getInstance().buscarlibroportitulo(Tittles.TITULO, tit);
-                String x = String.valueOf(SearchManager.getInstance().buscarlibroportitulo(Tittles.TITULO, tit));
-                if(tit.equals(x)){
-                    LibroBuilder te = new LibroBuilder();
-                    Libro book = (te.edit(aut,enu,est,tit,pis,edi,sed));
-                    dispose();
-                    DataManager.getInstance().EditarLibro(book);
-                }
+                int existe = 0;
+                for (Libro d: data){
+                    if (d.getTitulo().equals(tit)){
+                        existe++;
+                    }}
 
-                else {}
+
+                if(existe==1){
+                    for (Libro d:data){
+                        if (d.getTitulo().equals(tit)){
+                            data.remove(d);
+                            LibroBuilder le = new LibroBuilder();
+                            Libro book = (le.build(aut,enu,est,tit,pis,edi,sed));
+                            dispose();
+                            DataManager.getInstance().agregarLibro(book);
+                        }
+
+                } }
+
+                else {JFrame error= new JFrame();
+                    JOptionPane.showMessageDialog(error,"¡no se encontro el libro!");}
 
 
 

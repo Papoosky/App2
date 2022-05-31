@@ -58,22 +58,22 @@ public class BuscarLibroUI extends UAIJFrame {
 
                 }
                 else{
-                String[][] dataTabla = new String[finbook.size()][7];
-                int cont = 0;
+                    String[][] dataTabla = new String[finbook.size()][7];
+                    int cont = 0;
 
-                for(Libro p : finbook) {
-                    dataTabla[cont] = p.getDataToCsv();
-                    cont++;
-                }
-                TableModel tableModel = new DefaultTableModel(dataTabla, titles);
-                JTable table = new JTable(tableModel);
-                mainTableConatiner3.setLayout(new BorderLayout());
-                mainTableConatiner3.add(new JScrollPane(table), BorderLayout.CENTER);
+                    for(Libro p : finbook) {
+                        dataTabla[cont] = p.getDataToCsv();
+                        cont++;
+                    }
+                    TableModel tableModel = new DefaultTableModel(dataTabla, titles);
+                    JTable table = new JTable(tableModel);
+                    mainTableConatiner3.setLayout(new BorderLayout());
+                    mainTableConatiner3.add(new JScrollPane(table), BorderLayout.CENTER);
 
-                mainTableConatiner3.add(table.getTableHeader(), BorderLayout.NORTH);
+                    mainTableConatiner3.add(table.getTableHeader(), BorderLayout.NORTH);
 
-                mainTableConatiner3.setVisible(true);
-                mainTableConatiner3.setSize(400,400);
+                    mainTableConatiner3.setVisible(true);
+                    mainTableConatiner3.setSize(400,400);
                 }
 
             }
@@ -88,22 +88,34 @@ public class BuscarLibroUI extends UAIJFrame {
                 String[] titles = {"titulo", "autor", "estante_numero", "estante_seccion", "piso", "edificio", "sede"};
                 //obtengo los libros en una matriz
                 HashSet<Libro> finsede = SearchManager.getInstance().buscarlibroportitulo(Tittles.SEDE, sedet);
-                String[][] dataTabla = new String[finsede.size()][7];
-                int cont = 0;
-                for(Libro p : finsede) {
-                    dataTabla[cont] = p.getDataToCsv();
-                    cont++;
+                if (finsede.size() == 0){
+                    JFrame error= new JFrame();
+                    JOptionPane.showMessageDialog(error,"¡No se encontro la sede!");
+                    try {
+                        throw new LibroNotFoundException();
+                    } catch (LibroNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+                    dispose();
+
                 }
-                TableModel tableModel = new DefaultTableModel(dataTabla, titles);
-                JTable table = new JTable(tableModel);
-                mainTableConatiner4.setLayout(new BorderLayout());
-                mainTableConatiner4.add(new JScrollPane(table), BorderLayout.CENTER);
+                else {
+                    String[][] dataTabla = new String[finsede.size()][7];
+                    int cont = 0;
+                    for (Libro p : finsede) {
+                        dataTabla[cont] = p.getDataToCsv();
+                        cont++;
+                    }
+                    TableModel tableModel = new DefaultTableModel(dataTabla, titles);
+                    JTable table = new JTable(tableModel);
+                    mainTableConatiner4.setLayout(new BorderLayout());
+                    mainTableConatiner4.add(new JScrollPane(table), BorderLayout.CENTER);
 
-                mainTableConatiner4.add(table.getTableHeader(), BorderLayout.NORTH);
+                    mainTableConatiner4.add(table.getTableHeader(), BorderLayout.NORTH);
 
-                mainTableConatiner4.setVisible(true);
-                mainTableConatiner4.setSize(400,400);
-
+                    mainTableConatiner4.setVisible(true);
+                    mainTableConatiner4.setSize(400, 400);
+                }
 
             }
         });
@@ -116,22 +128,34 @@ public class BuscarLibroUI extends UAIJFrame {
                 String[] titles = {"titulo", "autor", "estante_numero", "estante_seccion", "piso", "edificio", "sede"};
                 //obtengo los libros en una matriz
                 HashSet<Libro> finsec = SearchManager.getInstance().buscarlibroportitulo(Tittles.ESTANTE_SECCION, sec);
-                String[][] dataTabla = new String[finsec.size()][7];
-                int cont = 0;
-                for(Libro p : finsec) {
-                    dataTabla[cont] = p.getDataToCsv();
-                    cont++;
+                if (finsec.size() == 0){
+                    JFrame error= new JFrame();
+                    JOptionPane.showMessageDialog(error,"¡No se encontro la seccion!");
+                    try {
+                        throw new LibroNotFoundException();
+                    } catch (LibroNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+                    dispose();
+
                 }
-                TableModel tableModel = new DefaultTableModel(dataTabla, titles);
-                JTable table = new JTable(tableModel);
-                mainTableConatiner5.setLayout(new BorderLayout());
-                mainTableConatiner5.add(new JScrollPane(table), BorderLayout.CENTER);
+                else {
+                    String[][] dataTabla = new String[finsec.size()][7];
+                    int cont = 0;
+                    for (Libro p : finsec) {
+                        dataTabla[cont] = p.getDataToCsv();
+                        cont++;
+                    }
+                    TableModel tableModel = new DefaultTableModel(dataTabla, titles);
+                    JTable table = new JTable(tableModel);
+                    mainTableConatiner5.setLayout(new BorderLayout());
+                    mainTableConatiner5.add(new JScrollPane(table), BorderLayout.CENTER);
 
-                mainTableConatiner5.add(table.getTableHeader(), BorderLayout.NORTH);
+                    mainTableConatiner5.add(table.getTableHeader(), BorderLayout.NORTH);
 
-                mainTableConatiner5.setVisible(true);
-                mainTableConatiner5.setSize(400,400);
-
+                    mainTableConatiner5.setVisible(true);
+                    mainTableConatiner5.setSize(400, 400);
+                }
             }
         });
     }

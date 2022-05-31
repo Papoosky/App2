@@ -48,9 +48,10 @@ public class EliminarLibroUI extends UAIJFrame {
                 if (existencia==1){
                     for (Libro p:data){
                         if (p.getTitulo().equals(tit)){
-                            data.remove(p);
+                            DataManager.getInstance().removerLibro(p);
                             JFrame success= new JFrame();
                             JOptionPane.showMessageDialog(success,"¡Libro eliminado!");
+                            dispose();
                             break;
                         }
                     }
