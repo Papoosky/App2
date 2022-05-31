@@ -1,6 +1,7 @@
 package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
+import com.uai.app.exceptions.LibroNotFoundException;
 import com.uai.app.files.FileManager;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.builders.LibroBuilder;
@@ -43,6 +44,7 @@ public class AgregarLibroUI extends UAIJFrame {
                 Libro book = (bo.build(aut,enu,est,tit,pis,edi,sed));
                 DataManager.getInstance().agregarLibro(book);
                 dispose();
+
             }
 
         });

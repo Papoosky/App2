@@ -2,6 +2,7 @@ package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.dominio.enums.Tittles;
+import com.uai.app.exceptions.LibroNotFoundException;
 import com.uai.app.logic.SearchManager;
 import com.uai.app.ui.utils.UAIJFrame;
 
@@ -45,8 +46,21 @@ public class BuscarLibroUI extends UAIJFrame {
                 String[] titles = {"titulo", "autor", "estante_numero", "estante_seccion", "piso", "edificio", "sede"};
                 //obtengo los libros en una matriz
                 HashSet<Libro> finbook = SearchManager.getInstance().buscarlibroportitulo(Tittles.TITULO, tit);
+                if (finbook.size() == 0){
+                    JFrame error= new JFrame();
+                    JOptionPane.showMessageDialog(error,"¡No se encontro el libro!");
+                    try {
+                        throw new LibroNotFoundException();
+                    } catch (LibroNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+                    dispose();
+
+                }
+                else{
                 String[][] dataTabla = new String[finbook.size()][7];
                 int cont = 0;
+
                 for(Libro p : finbook) {
                     dataTabla[cont] = p.getDataToCsv();
                     cont++;
@@ -60,7 +74,7 @@ public class BuscarLibroUI extends UAIJFrame {
 
                 mainTableConatiner3.setVisible(true);
                 mainTableConatiner3.setSize(400,400);
-
+                }
 
             }
 
