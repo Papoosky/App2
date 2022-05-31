@@ -70,4 +70,49 @@ public class SearchManager {
         }
         return ciudadanos;
     }
+
+    public HashSet<Libro> buscarlibroportitulo (Tittles title, String theSearch){
+        //ahora instancio un mapa con esas claves
+        HashSet<Libro> data = DataManager.getInstance().getData();
+
+        HashSet<Libro> libros = new HashSet<Libro>();
+        for (Libro p : data){
+            //Uso lo mismo que en el data manager
+            Class<?> classObj = p.getClass();
+            Method printMessage = null;
+            try {
+                String camelCase = CaseUtils.toCamelCase(title.getVal(), true);
+                printMessage = classObj.getDeclaredMethod("get"+camelCase);
+                String filterName = String.valueOf(printMessage.invoke(p));
+
+                // si es un numero entonces no uso distancia de leventeihns
+                if (printMessage.getReturnType().isPrimitive() ||
+                        printMessage.getReturnType().isAssignableFrom(Integer.class)){
+                    if (theSearch.trim().equalsIgnoreCase(filterName)){
+                        libros.add(p);
+                    }
+                } else {
+                    //Con una distancia de 3 estamos bien cubiertos
+                    if (lv.apply(theSearch, filterName) < 4
+                    ){
+                        libros.add(p);
+                    }
+                }
+
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return libros;
+
+
+    }
+
+
 }

@@ -41,7 +41,7 @@ public class MainMenuUI extends UAIJFrame {
         editarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UIBuilder.buildUI(EditarLibroUI.class);
+                UIBuilder.buildUI(EditarLibroVentana.class);
             }
         });
 

@@ -2,6 +2,7 @@ package com.uai.app.logic.builders;
 
 import com.uai.app.dominio.Libro;
 
+
 public class LibroBuilder {
 
     private String titulo;
@@ -47,7 +48,7 @@ public class LibroBuilder {
         return this;
     }
     //Return the finally consrcuted User object
-    public Libro build(String au,int num,String sec,String tit,int p,String ed, String se) {
+    public Libro build(String au,int num,String sec,String tit,int p,String ed, String se){
         Libro book =  new Libro();
         book.setAutor(au);
         book.setEstante_numero(num);
@@ -57,6 +58,15 @@ public class LibroBuilder {
         book.setEdificio(ed);
         book.setSede(se);
         validateBookObject(book);
+        return book;
+    }
+
+
+    public Libro edit(String au,int num,String sec,String tit,int p,String ed, String se){
+        //HashSet<Libro> data = DataManager.getInstance().getData();
+        //for (Libro d: data){data.remove(d);}
+        LibroBuilder lib = new LibroBuilder();
+        Libro book = (lib.build(au,num,sec,tit,p,ed,se));
         return book;
     }
 

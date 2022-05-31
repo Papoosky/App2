@@ -1,7 +1,6 @@
 package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
-import com.uai.app.files.FileManager;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -20,14 +19,14 @@ public class AgregarLibroUI extends UAIJFrame {
     private JTextField piso;
     private JTextField edificio;
     private JTextField sede;
-    private JButton agregarButton;
+    private JButton EditarButton;
     private JTextField num;
 
 
     public AgregarLibroUI(String title) {
         super(title);
         this.setMainPanel(mainPanel);
-        agregarButton.addActionListener(new ActionListener() {
+        EditarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String tit=titulo.getText();
